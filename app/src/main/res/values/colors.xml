@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#212121</color>
+    <color name="primary_dark">#030303</color>
+    <color name="background">#DFEAF1</color>
+    <color name="button_background">#F08C35</color>
+    <color name="button_text">@android:color/black</color>
+    <color name="accented_button_background">#CD2245</color>
+    <color name="accented_button_text">@android:color/white</color>
+</resources>

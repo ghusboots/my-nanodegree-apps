@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.ActionButton">
+        <item name="android:background">@color/button_background</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:layout_width">@dimen/portfolio_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/portfolio_button_padding</item>
+        <item name="android:paddingBottom">@dimen/portfolio_button_padding</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AccentedAppButton" parent="AppButton">
+        <item name="android:background">@color/accented_button_background</item>
+        <item name="android:textColor">@color/accented_button_text</item>
+    </style>
+</resources>
