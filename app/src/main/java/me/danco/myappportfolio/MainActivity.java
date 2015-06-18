@@ -1,8 +1,12 @@
 package me.danco.myappportfolio;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +15,32 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
+    private void launchApp(String packageName) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage(packageName);
+        if (launchIntent == null) {
+            Log.e(this.getPackageName(), packageName);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.launchapp_toast), Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
+        launchIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        startActivity(launchIntent);
+    }
+
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Button b = (Button) v;
-            Toast toast = Toast.makeText(getApplicationContext(), String.format("This button will launch %s!", b.getText()), Toast.LENGTH_SHORT);
-            toast.show();
+            String buttonText = b.getText().toString();
+
+            if (buttonText.equals(getString(R.string.button_streamer))) {
+                launchApp(getString(R.string.package_streamer));
+            } else {
+                Toast toast = Toast.makeText(getApplicationContext(), String.format(getString(R.string.toast_format), b.getText()), Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
     };
 

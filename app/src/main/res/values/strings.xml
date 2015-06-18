@@ -10,5 +10,7 @@
     <string name="button_build_it_bigger">Build It Bigger</string>
     <string name="button_xyz_reader">XYZ Reader</string>
     <string name="button_capstone">Capstone: My Own App</string>
-
+    <string name="toast_format">This button will launch %s!</string>
+    <string name="package_streamer">me.danco.spotifystreamer</string>
+    <string name="launchapp_toast">App not found. Something went wrong!</string>
 </resources>
